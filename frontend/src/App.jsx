@@ -9,10 +9,14 @@ import Contact from './pages/Contact';
 import { MyProfile } from './pages/MyProfile';
 import Computer from './pages/Computer';
 import Highschool from './pages/Highschool';
+import Instructor from './components/Instructor';
+import PopularCoureses from './components/PopularCourses';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
-  <div className="mx-4 sm:mx-[10%]">
+  <div >
+     <div className='mx-4 sm:mx-[10%]'>
      <BrowserRouter>
    <Header/>
      <Routes>
@@ -26,7 +30,13 @@ const App = () => {
        <Route path='/computer' element={<Computer/>}></Route>
        <Route path='/highschool' element={<Highschool/>}></Route>
      </Routes>
+    
+
    </BrowserRouter>
+   <PopularCoureses/>
+     <Instructor/>
+     </div>
+     <Footer/>
   </div>
   )
 }
