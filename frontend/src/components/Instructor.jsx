@@ -2,14 +2,14 @@ import oriemi from '../assets/images/oriemi_profile.jpg'
 
 const Instructor = ()=> {
     return (
-    <div className='mt-10'>
+    <div className='mt-10 flex-col'>
       
         <h1 className='font-semibold text-2xl pt-5'>Instructors</h1>
         <p className='italic'>Instructors are responsible for teaching students and providing guidance on learning.</p>
         <p className='italic'>Some of the instructors at ATSa E-Learning High School include:</p>
 
-  <div className="flex flex-wrap gap-10 pt-5 w-full">
-  <div className="relative h-auto w-[27%]  bg-white shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+  <div className="flex flex-wrap gap-10 pt-5 w-full flex-col md:flex-row">
+  <div className="relative h-auto md:w-[27%]  bg-white shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out">
     <img src={oriemi} alt="Instructor Oriemi" className="w-full h-52 object-cover" />
     <div className="p-4">
       <h3 className="font-semibold text-lg text-gray-800 hover:text-blue-600 transition-colors duration-200">
@@ -21,7 +21,7 @@ const Instructor = ()=> {
     </div>
   </div>
 
-  <div className="relative h-auto w-[27%] bg-white shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+  <div className="relative h-auto md:w-[27%] bg-white shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out">
     <img src={oriemi} alt="Instructor Oriemi" className="w-full h-52 object-cover" />
     <div className="p-4">
       <h3 className="font-semibold text-lg text-gray-800 hover:text-blue-600 transition-colors duration-200">
