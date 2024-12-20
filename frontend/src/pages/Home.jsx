@@ -4,6 +4,7 @@ import Instructor from '../components/Instructor';
 import PopularCoureses from '../components/PopularCourses';
 
 
+
 const Home = () => {
   return (
 <div>
