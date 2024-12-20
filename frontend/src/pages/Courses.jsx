@@ -10,6 +10,11 @@ import math_11 from '../assets/course_images/maths11.jpg'
 import math_12 from '../assets/course_images/maths12.jpg'
 import { MdOutlineLock } from "react-icons/md";
 import { MdAccessTime } from "react-icons/md";
+import { useEffect, useState } from "react";
+
+
+
+
 
 
 const courseList = [
@@ -49,7 +54,74 @@ const courseList = [
 }
 ]
 
+
+const subjectList = [
+  'Language',
+  'Mathematics',
+  'Chemistry',
+  'Biology',
+  'Physics',
+  'Programming'
+]
+
+
+
+
+
+
 const Courses = () => {
+  const [courseData, setCourseData] = useState([])
+const [loading, setLoading] = useState(true)
+const [error, setError] = useState(null)
+const [currentSubject, setCurrentSubject] = useState("Language")
+
+  const fetchData = (subject)=> {
+    const path =`/api/course/${subject}`
+    //http://localhost:3000/api/course/language
+    console.log(path)
+    fetch(path)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error fetching subject data');
+        }
+        return response.json();
+    })
+    .then(data => {
+        setCourseData(data)
+        console.log(data)
+        setLoading(false);
+    })
+    .catch(err => {
+        setError(err.message);
+        setLoading(false);
+    });
+  }
+
+  useEffect(()=> {
+    fetchData("language")
+  }, [])
+
+  if (loading) {
+    return (<div>Loading...</div>);
+  }
+  
+  if (error) {
+    return (<div>Error: {`error here ${error}`}</div>);
+  }
+
+
+ const handleSubject = (subject)=>{
+  setCurrentSubject(subject)
+
+  const data = subject.toLowerCase()
+   fetchData(data)
+
+  }
+
+
+  
+
+
   return (
     <div>
       <div className='flex items-center'>
@@ -94,13 +166,13 @@ const Courses = () => {
             <hr className='mt-2'></hr>
             <ul className='mt-6 flex flex-col gap-3 text-gray-700 text-lg'>
               
-             
-              <li>Language</li>
-              <li>Programming</li>
-              <li className="bg-teal-800 text-white font-semibold p-1">Mathematics</li>
-              <li>Chemistry</li>
-              <li>Biology</li>
-              <li>Physics</li>
+            {
+              //bg-teal-800 text-white font-semibold p-1
+            subjectList.map((subject)=> {
+              return (
+                <li className={currentSubject === subject? "bg-teal-800 text-white font-semibold p-1 cursor-pointer":"cursor-pointer hover:bg-teal-700 hover:text-white"} onClick={()=>handleSubject(subject)} >{subject}</li>
+              )
+            })}
 
 
             </ul>
@@ -119,16 +191,20 @@ const Courses = () => {
 
           <div className="flex flex-col gap-5 md:flex-row md:flex-wrap justify-between mt-9">
   {
-    courseList.map((course) => {
+    courseData.courses.map((course, index) => {
+      // console.log(course[index].image)
+      console.log(course.image)
       return (
         <div className="relative h-auto border-b border-teal-800 md:w-[27%] lg:w-[30%] bg-white shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out">
-          <img src={course.image} alt="Instructor Oriemi" className="w-full h-52 object-cover" />
+          <img src={courseList[index].image} alt="Instructor Oriemi" className="w-full h-52 object-cover" />
+
           <div className="p-4">
             <h3 className="font-semibold text-lg text-gray-800 hover:text-teal-800 transition-colors duration-200">
               {course.title}
             </h3>
             <div className="top-5 p-[3px] absolute bg-teal-800 bg-opacity-60">
               <h2 className="text-white text-lg font-semibold">{course.level}</h2>
+
             </div>
             <p className="italic text-gray-600 text-sm">
               {course.decription}
