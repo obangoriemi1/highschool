@@ -31,9 +31,6 @@ import phy11 from '../assets/course_images/phy11.jpg'
 
 
 
-
-
-
 const courseList = [
   {
   id: 1,
@@ -191,29 +188,29 @@ const [currentSubject, setCurrentSubject] = useState("Language")
       <div className='flex items-center'>
         <Link> 
          <NavLink to={'/'}>
-        <h1 className="flex font-semibold gap-1 items-center text-black">Home <span className="flex items-center"><IoIosArrowForward size={18} /></span></h1>
+        <h1 className="flex font-semibold gap-1 items-center dark:text-white text-black">Home <span className="flex items-center"><IoIosArrowForward size={18} /></span></h1>
 
         </NavLink> 
         </Link>
     
 
-        <h1 className="text-gray-800">Learning Catalog</h1>
+        <h1 className="dark:text-gray-300 text-gray-800">Learning Catalog</h1>
       </div>
      
 
 <div className='flex gap-3 justify-between flex-col md:flex-row lg:mt-5 xl:mt-8 items-start'>
         <div className='md:w-[30%] w-full  h-full'>
-        <h1 className='text-gray-800 text-2xl font-semibold'>Learning Catalog</h1>
-          <h1  className='flex gap-3 text-xl font-semibold text-gray-800 mt-5'><span><PiSquaresFour size={30} /></span> Subjects</h1>
+        <h1 className= 'dark:text-white text-gray-800 text-2xl font-semibold'>Learning Catalog</h1>
+          <h1  className='flex gap-3 text-xl font-semibold dark:text-white text-gray-800 mt-5'><span><PiSquaresFour size={30} /></span> Subjects</h1>
           <div>
             <hr className='mt-2'></hr>
-            <ul className='mt-6 flex flex-col gap-3 text-gray-700 text-lg'>
+            <ul className='mt-6 flex flex-col gap-3 dark:text-gray-300 text-gray-700 text-lg'>
               
             {
               //bg-teal-800 text-white font-semibold p-1
             subjectList.map((subject)=> {
               return (
-                <li className={currentSubject === subject? "bg-teal-800 text-white font-semibold p-1 cursor-pointer":"cursor-pointer hover:bg-teal-700 hover:text-white"} onClick={()=>handleSubject(subject)} >{subject}</li>
+                <li className={currentSubject === subject? "bg-teal-800 dark:bg-[#2a9df4] text-white font-semibold p-1 cursor-pointer":"cursor-pointer dark:hover:bg-[#2a9df4] hover:bg-teal-700"} onClick={()=>handleSubject(subject)} >{subject}</li>
               )
             })}
             </ul>
@@ -225,7 +222,7 @@ const [currentSubject, setCurrentSubject] = useState("Language")
           <div className="flex gap-2 mt-5 items-center">
             <h1 className="text-xl">Courses</h1>
             <div className="w-[2px] h-[19px] bg-gray-900"></div>
-            <h1 className="text-teal-800 text-xl font-semibold cursor-pointer">View All</h1>
+            <h1 className="text-teal-800 dark:text-[#2a9df4] text-xl font-semibold cursor-pointer">View All</h1>
           </div>
 
           <motion.div key={courseData.title} className="flex flex-col gap-1 md:flex-row md:flex-wrap mt-9  w-full" 
@@ -269,21 +266,21 @@ const [currentSubject, setCurrentSubject] = useState("Language")
     
        
      
-          <motion.div variants={itemVariants} className="relative h-auto border-b cursor-pointer border-teal-800 md:w-[27%] lg:w-[32.9%] bg-white shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out"
+          <motion.div variants={itemVariants} className="relative h-auto border-b dark:border-[#2a9df4] border-teal-800  cursor-pointer  md:w-[27%] lg:w-[32.9%]  shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out"
        
        >
          <NavLink className="lg:w-[40%]" to={'/course-info'}>
          <img src={imageList[index]} alt="Instructor Oriemi" className="w-full h-52 object-cover" />
 
          <div className="p-4">
-           <h3 className="font-semibold text-lg text-gray-800 hover:text-teal-800 transition-colors duration-200">
+           <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-200 hover:text-teal-800 transition-colors duration-200">
              {course.title}
            </h3>
            <div className="top-5 p-[3px] absolute bg-teal-800 bg-opacity-60">
              <h2 className="text-white text-lg font-semibold">{course.level}</h2>
 
            </div>
-           <p className="italic text-gray-600 text-sm">
+           <p className="italic dark:text-gray-300 text-gray-600 text-sm">
              {course.decription}
            </p>
          </div>

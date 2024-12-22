@@ -16,8 +16,8 @@ import Login from './pages/Login';
 
 const App = () => {
   return (
-  <div >
-     <div className='mx-4 sm:mx-[10%]'>
+  <div className='dark:bg-slate-900 dark:text-gray-100 duration-100' >
+     <div className='mx-4 sm:mx-[5%]'>
      <BrowserRouter>
    <Header/>
      <Routes>
