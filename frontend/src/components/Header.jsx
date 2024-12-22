@@ -44,7 +44,7 @@ const Header = () => {
                </div>
             </div>
             :
-            <button onClick={() =>navigate("/sign-in")} className="bg-teal-800 text-white px-8 py-3 rounded-full font-light hidden md:block">Create Account</button>
+            <button onClick={() =>navigate("/login")} className="bg-teal-800 text-white px-8 py-3 rounded-full font-light hidden md:block">Create Account</button>
           }
         
         </div>
