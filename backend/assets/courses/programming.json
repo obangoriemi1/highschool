@@ -1,38 +1,35 @@
 {
     "title": "Programming",
     "id":"PROGRAMMING",
-    "description": "A comprehensive list of math courses covering fundamental and advanced concepts for analytical and problem-solving skills.",
+    "description": "Master the essentials of programming with courses covering a range of languages and concepts, designed to build practical coding skills for real-world applications.",
     "courses":[
         {
             "id": 1,
             "title": "HTML",
-            "image": "D:\\highschool\\frontend\\src\\assets\\course_images\\maths9.jpg",
-            "decription": "Mathematics for Grade 9 focuses on building a strong foundation in algebra, geometry, and statistics. Students explore concepts like linear equations, quadratic functions, and geometric reasoning to enhance critical thinking skills. These topics prepare learners for advanced math studies and real-world applications.",
-            "instructor": "Oriemi Obang",
+            "decription": "HTML forms the backbone of web development, providing the structure for creating web pages. Students learn to use HTML tags to build content, structure layouts, and embed multimedia...",
+            "instructor": "Kuch Obang",
             "accessibility": "Free",
-            "time": "12 hours",
-            "level": "Intermiadate"
+            "time": "2 hours",
+            "level": "Begginer"
           
           
           },
             {
             "id": 2,
             "title": "CSS",
-            "image": "D:\\highschool\\frontend\\src\\assets\\course_images\\math10.jpg",
-            "decription": "Mathematics for Grade 10 emphasizes advanced algebra, trigonometry, and introductory calculus. Students develop problem-solving skills by exploring quadratic equations, trigonometric functions, and coordinate geometry, preparing for higher-level concepts.",
-            "instructor": "Oriemi Obang",
+            "decription": "CSS enhances the visual appeal of web pages, enabling students to style and layout content effectively. The course covers design principles, including colors, fonts, and responsive layouts...",
+            "instructor": "Kuch Obang",
             "accessibility": "Free",
-            "time": "10 hours",
-            "level": "Intermiadate"
+            "time": "3 hours",
+            "level": "Begginer"
           
           },
             {
             "id": 1,
             "title": "Javascript",
-            "image": "D:\\highschool\\frontend\\src\\assets\\course_images\\maths11.jpg",
-            "decription": "Grade 11 Mathematics dives deeper into functions, sequences, and advanced trigonometry. Students also study probability, statistics, and introductory calculus, laying the groundwork for critical thinking and real-world applications.",
-            "instructor": "Oriemi Obang",
-            "accessibility": "$12",
+            "decription": "JavaScript brings interactivity to websites, allowing students to create dynamic content and user experiences. The course covers essential programming concepts like variables, functions, and event handling...",
+            "instructor": "Kuch Obang",
+            "accessibility": "$5",
             "time":" 20 hours",
             "level": "Advanced"
           

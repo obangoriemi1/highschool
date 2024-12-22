@@ -8,9 +8,26 @@ import math_9 from '../assets/course_images/maths9.jpg'
 import math_10 from '../assets/course_images/math10.jpg'
 import math_11 from '../assets/course_images/maths11.jpg'
 import math_12 from '../assets/course_images/maths12.jpg'
+import englishImge from '../assets/course_images/learn_english.jpg'
+import amharciImage from '../assets/course_images/amharic.jpg'
+import dhaAnywaaImage from '../assets/course_images/dha_anywaa.jpg'
 import { MdOutlineLock } from "react-icons/md";
 import { MdAccessTime } from "react-icons/md";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import chemo9 from '../assets/course_images/chemo9.jpg'
+import chemo10 from '../assets/course_images/chemo10.jpg'
+import chemo11 from '../assets/course_images/chemo11.jpg'
+import bio9 from '../assets/course_images/bio9.jpg'
+import bio10 from '../assets/course_images/bio10.jpg'
+import bio11 from '../assets/course_images/bio11.jpg'
+import phy9 from '../assets/course_images/phy9.jpg'
+import phy10 from '../assets/course_images/phy10.jpg'
+import html from '../assets/course_images/html.jpg'
+import css from '../assets/course_images/css.jpg'
+import javasc from '../assets/course_images/javasc.jpg'
+import phy11 from '../assets/course_images/phy11.jpg'
+
 
 
 
@@ -52,6 +69,38 @@ const courseList = [
   level: 'Advanced'
 
 }
+]
+
+const Language  =[
+  englishImge,
+  dhaAnywaaImage,
+  amharciImage
+]
+
+const Mathematics = [
+  math_9,
+  math_10,
+  math_11
+]
+const Chemistry = [
+  chemo9,
+  chemo10,
+  chemo11
+]
+const Biology = [
+  bio9,
+  bio10,
+  bio11
+]
+const Physics = [
+  phy9,
+  phy10,
+  phy11
+]
+const Programming = [
+  html,
+  css,
+  javasc
 ]
 
 
@@ -118,6 +167,21 @@ const [currentSubject, setCurrentSubject] = useState("Language")
 
   }
 
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5, 
+      },
+    },
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  };
+
 
   
 
@@ -137,28 +201,7 @@ const [currentSubject, setCurrentSubject] = useState("Language")
       </div>
      
 
-<div className='flex gap-3 justify-between flex-col md:flex-row mt-14 items-start'>
-       {/* <div className="flex flex-col items-center mt-9 lg:mt-5">
-    <h1 className='text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide'>
-      Learn From Smart Brains.
-    </h1>
-    <p className='mt-10 text-center max-w-4xl'>Empower yourself, get started today and turn your imagination into immersive reality!</p>
-    <div className="flex justify-center my-10">
-      <Link className='bg-black text-white py-3 px-4 mx-3 rounded-md'>Start for free</Link>
-      <Link className='bg-black text-white py-3 px-4 mx-3 rounded-md'>Documentation</Link>
-    </div>
-    <div className="lg:flex  items-center mt-5  gap-4">
-    <div className="w-52 h-32 border border-teal-900 flex items-center text-center justify-center m-2 hover:bg-teal-800 hover:text-white cursor-pointer">
-        <Link to={"/highschool"} className='font-bold'>High School</Link>
-    </div>
-    <div className="w-52 h-32 border border-teal-900 flex items-center text-center justify-center m-2  hover:bg-teal-800 hover:text-white cursor-pointer">
-       <Link to={"/computer"} className='font-bold'>Computer</Link>
-    </div>
-    
-    </div>
-   </div> */}
-
-
+<div className='flex gap-3 justify-between flex-col md:flex-row lg:mt-5 xl:mt-8 items-start'>
         <div className='md:w-[30%] w-full  h-full'>
         <h1 className='text-gray-800 text-2xl font-semibold'>Learning Catalog</h1>
           <h1  className='flex gap-3 text-xl font-semibold text-gray-800 mt-5'><span><PiSquaresFour size={30} /></span> Subjects</h1>
@@ -173,52 +216,91 @@ const [currentSubject, setCurrentSubject] = useState("Language")
                 <li className={currentSubject === subject? "bg-teal-800 text-white font-semibold p-1 cursor-pointer":"cursor-pointer hover:bg-teal-700 hover:text-white"} onClick={()=>handleSubject(subject)} >{subject}</li>
               )
             })}
-
-
             </ul>
-
           </div>
-
         </div>
         <div className='md:w-[70%] w-full  h-full'>
-          <h1 className="md:text-3xl text-2xl">Mathematics</h1>
-          <p className="mt-3">A comprehensive list of math courses covering fundamental and advanced concepts for analytical and problem-solving skills.</p>
+          <h1 className="md:text-3xl text-2xl">{courseData.title}</h1>
+          <p className="mt-3">{courseData.description}</p>
           <div className="flex gap-2 mt-5 items-center">
             <h1 className="text-xl">Courses</h1>
             <div className="w-[2px] h-[19px] bg-gray-900"></div>
             <h1 className="text-teal-800 text-xl font-semibold cursor-pointer">View All</h1>
           </div>
 
-          <div className="flex flex-col gap-5 md:flex-row md:flex-wrap justify-between mt-9">
+          <motion.div key={courseData.title} className="flex flex-col gap-1 md:flex-row md:flex-wrap mt-9  w-full" 
+          // initial={{ opacity: 0.1, y: index + 55 }} 
+          // whileInView={{ opacity: 1, y: 0 }} 
+          // transition={{ duration: 1.5 }}
+          // viewport={{ once: false }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          >
   {
     courseData.courses.map((course, index) => {
-      // console.log(course[index].image)
-      console.log(course.image)
+    
+      let imageList = []
+      if(`${courseData.title}` === subjectList[0]){
+        imageList = Language
+        console.log(imageList)
+      } else if(`${courseData.title}` === subjectList[1]){
+        imageList = Mathematics
+        console.log(imageList)
+      } else if(`${courseData.title}` === subjectList[2]){
+        imageList = Chemistry
+        console.log(imageList)
+      } else if(`${courseData.title}` === subjectList[3]){
+        imageList = Biology
+        console.log(imageList)
+      } else if(`${courseData.title}` === subjectList[4]){
+        imageList = Physics
+        console.log(imageList)
+        console.log(imageList)
+      } else  if(`${courseData.title}` === subjectList[5]){
+        imageList = Programming
+        console.log(imageList)
+      }
+
+      const imag = course.title
+      
+      console.log(courseData.title === subjectList[index])
       return (
-        <div className="relative h-auto border-b border-teal-800 md:w-[27%] lg:w-[30%] bg-white shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out">
-          <img src={courseList[index].image} alt="Instructor Oriemi" className="w-full h-52 object-cover" />
+    
+       
+     
+          <motion.div variants={itemVariants} className="relative h-auto border-b cursor-pointer border-teal-800 md:w-[27%] lg:w-[32.9%] bg-white shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out"
+       
+       >
+         <NavLink className="lg:w-[40%]" to={'/course-info'}>
+         <img src={imageList[index]} alt="Instructor Oriemi" className="w-full h-52 object-cover" />
 
-          <div className="p-4">
-            <h3 className="font-semibold text-lg text-gray-800 hover:text-teal-800 transition-colors duration-200">
-              {course.title}
-            </h3>
-            <div className="top-5 p-[3px] absolute bg-teal-800 bg-opacity-60">
-              <h2 className="text-white text-lg font-semibold">{course.level}</h2>
+         <div className="p-4">
+           <h3 className="font-semibold text-lg text-gray-800 hover:text-teal-800 transition-colors duration-200">
+             {course.title}
+           </h3>
+           <div className="top-5 p-[3px] absolute bg-teal-800 bg-opacity-60">
+             <h2 className="text-white text-lg font-semibold">{course.level}</h2>
 
-            </div>
-            <p className="italic text-gray-600 text-sm">
-              {course.decription}
-            </p>
-          </div>
-          <div className="flex pb-2 pl-5 gap-5">
-            <span className="flex items-center gap-2"><MdAccessTime size={20} /> {course.time}</span>
-            <span className="flex items-center gap-2"><MdOutlineLock size={20} /> {course.accessibility}</span>
-          </div>
-        </div>
+           </div>
+           <p className="italic text-gray-600 text-sm">
+             {course.decription}
+           </p>
+         </div>
+         <div className="flex pb-2 pl-5 gap-5">
+           <span className="flex items-center gap-2"><MdAccessTime size={20} /> {course.time}</span>
+           <span className="flex items-center gap-2"><MdOutlineLock size={20} /> {course.accessibility}</span>
+         </div>
+         </NavLink>
+       </motion.div>
+      
+        
+        
+    
       );
     })
   }
-</div>
+</motion.div>
 
         </div>
     </div>

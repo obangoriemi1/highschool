@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import { MyProfile } from './pages/MyProfile';
 import Computer from './pages/Computer';
 import Highschool from './pages/Highschool';
+import CourseInfo from './pages/CourseInfo';
 
 import Footer from './components/Footer';
 
@@ -28,6 +29,7 @@ const App = () => {
        <Route path='/profile' element={<MyProfile/>}></Route>
        <Route path='/computer' element={<Computer/>}></Route>
        <Route path='/highschool' element={<Highschool/>}></Route>
+       <Route path='/course-info' element={<CourseInfo/>}></Route>
      </Routes>
     
 

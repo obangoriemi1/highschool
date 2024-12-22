@@ -6,34 +6,31 @@
         {
             "id": 1,
             "title": "English for Grade 9",
-            "image": "D:\\highschool\\frontend\\src\\assets\\course_images\\maths9.jpg",
-            "decription": "Mathematics for Grade 9 focuses on building a strong foundation in algebra, geometry, and statistics. Students explore concepts like linear equations, quadratic functions, and geometric reasoning to enhance critical thinking skills. These topics prepare learners for advanced math studies and real-world applications.",
+            "decription": "Grade 9 English focuses on building foundational language skills, including grammar, vocabulary, and writing. Students explore a variety of literary genres, analyze themes, and develop critical thinking through reading and discussions. This course lays the groundwork for effective communication and creative expression.",
             "instructor": "Oriemi Obang",
             "accessibility": "Free",
-            "time": "12 hours",
-            "level": "Intermiadate"
+            "time": "9 hours",
+            "level": "Beginner"
           
           
           },
             {
             "id": 2,
             "title": "English for Grade 10",
-            "image": "D:\\highschool\\frontend\\src\\assets\\course_images\\math10.jpg",
-            "decription": "Mathematics for Grade 10 emphasizes advanced algebra, trigonometry, and introductory calculus. Students develop problem-solving skills by exploring quadratic equations, trigonometric functions, and coordinate geometry, preparing for higher-level concepts.",
+            "decription": "Grade 10 English enhances language proficiency with a focus on advanced grammar, composition, and oral communication. Students engage with diverse texts, including poetry, prose, and drama, honing analytical and interpretive skills. The course prepares students for academic and professional success.",
             "instructor": "Oriemi Obang",
             "accessibility": "Free",
-            "time": "10 hours",
+            "time": "12 hours",
             "level": "Intermiadate"
           
           },
             {
             "id": 1,
             "title": "English for Grade 11",
-            "image": "D:\\highschool\\frontend\\src\\assets\\course_images\\maths11.jpg",
-            "decription": "Grade 11 Mathematics dives deeper into functions, sequences, and advanced trigonometry. Students also study probability, statistics, and introductory calculus, laying the groundwork for critical thinking and real-world applications.",
+            "decription": "Grade 11 English emphasizes literary analysis, persuasive writing, and research skills. Students explore complex texts, including classic and modern literature, to deepen their understanding of themes, structure, and style. This course equips students with advanced communication skills for higher education and beyond.",
             "instructor": "Oriemi Obang",
             "accessibility": "$12",
-            "time":" 20 hours",
+            "time":" 25 hours",
             "level": "Advanced"
           
           }

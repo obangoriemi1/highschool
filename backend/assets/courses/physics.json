@@ -1,39 +1,36 @@
 {
     "title": "Physics",
     "id":"PHYSICS",
-    "description": "A comprehensive list of math courses covering fundamental and advanced concepts for analytical and problem-solving skills.",
+    "description": "Explore the fundamentals of Physics, from motion and energy to forces, with courses designed to build a strong foundation and enhance problem-solving skills",
     "courses":[
         {
             "id": 1,
             "title": "Physics for Grade 9",
-            "image": "D:\\highschool\\frontend\\src\\assets\\course_images\\maths9.jpg",
-            "decription": "Mathematics for Grade 9 focuses on building a strong foundation in algebra, geometry, and statistics. Students explore concepts like linear equations, quadratic functions, and geometric reasoning to enhance critical thinking skills. These topics prepare learners for advanced math studies and real-world applications.",
+            "decription": "Grade 9 Physics introduces fundamental concepts such as motion, energy, and forces. Students explore basic principles and engage in hands-on experiments to understand the physical world...",
             "instructor": "Oriemi Obang",
             "accessibility": "Free",
-            "time": "12 hours",
-            "level": "Intermiadate"
+            "time": "23 hours",
+            "level": "Begginer"
           
           
           },
             {
             "id": 2,
             "title": "Physics for Grade 10",
-            "image": "D:\\highschool\\frontend\\src\\assets\\course_images\\math10.jpg",
-            "decription": "Mathematics for Grade 10 emphasizes advanced algebra, trigonometry, and introductory calculus. Students develop problem-solving skills by exploring quadratic equations, trigonometric functions, and coordinate geometry, preparing for higher-level concepts.",
+            "decription": "Grade 10 Physics deepens understanding of energy transfer, waves, and electrical circuits. Students apply theoretical knowledge to real-life situations through practical experiments and problem-solving...",
             "instructor": "Oriemi Obang",
             "accessibility": "Free",
-            "time": "10 hours",
+            "time": "25 hours",
             "level": "Intermiadate"
           
           },
             {
             "id": 1,
             "title": "Physics for Grade 11",
-            "image": "D:\\highschool\\frontend\\src\\assets\\course_images\\maths11.jpg",
-            "decription": "Grade 11 Mathematics dives deeper into functions, sequences, and advanced trigonometry. Students also study probability, statistics, and introductory calculus, laying the groundwork for critical thinking and real-world applications.",
+            "decription": "Grade 11 Physics covers more advanced topics, including mechanics, thermodynamics, and electromagnetism. Students develop critical thinking and analytical skills through complex experiments and theoretical challenges...",
             "instructor": "Oriemi Obang",
-            "accessibility": "$12",
-            "time":" 20 hours",
+            "accessibility": "$9.99",
+            "time":" 30 hours",
             "level": "Advanced"
           
           }
