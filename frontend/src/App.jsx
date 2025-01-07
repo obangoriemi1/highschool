@@ -16,7 +16,7 @@ import Login from './pages/Login';
 
 const App = () => {
   return (
-  <div className='dark:bg-slate-900 dark:text-gray-100 duration-100' >
+  <div className='dark:bg-slate-900 dark:text-gray-100 duration-100 pb-5' >
      <div className='mx-4 sm:mx-[5%]'>
      <BrowserRouter>
    <Header/>
@@ -37,7 +37,7 @@ const App = () => {
    </BrowserRouter>
   
      </div>
-     <Footer/>
+     {/* <Footer/> */}
   </div>
   )
 }

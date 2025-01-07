@@ -1,9 +1,197 @@
 import { Link, NavLink } from "react-router-dom"
 import { IoIosArrowForward } from "react-icons/io";
+import atsa from '../assets/images/atsa-logo.png';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { MdOutlineSubject } from "react-icons/md";
+import { IoIosArrowUp,IoIosArrowDown } from "react-icons/io";
+import math_9 from '../assets/course_images/maths9.jpg'
+import { IoIosUnlock } from "react-icons/io";
+import { FaRegClock } from "react-icons/fa6";
+import { HiMiniChartBar } from "react-icons/hi2";
+import { ImLab } from "react-icons/im";
+
+
+
+
+
+
 
 const CourseInfo = ()=> {
 
+  const courseList = [
+    {
+      id: '1',
+      title: "Course introduction",
+      topic: [
+        {
+          title: "About the course",
+          subTopic: []
 
+        },
+        {
+          title: "Resources"
+        }
+      ]
+    }
+    ,
+    {
+      title: "Unit 1: The number system",
+      topic: [
+        {
+          title: "Revision on the set of rational number",
+          subTopic: [
+            {
+          
+              title: 'The number system'
+            },
+            {
+              title: 'Common factor and common multiple'
+            },
+            {
+              title: 'Rational number'
+            }
+
+          ]
+
+        },
+        {
+          title: "The real number system",
+          subTopic: [
+            {
+          
+              title: 'The number system'
+            },
+            {
+              title: 'Common factor and common multiple'
+            },
+            {
+              title: 'Rational number'
+            }
+
+          ]
+
+        }
+      ]
+
+
+    }
+   
+    ,
+    {
+      title: "Unit 1: The number system",topic: [
+        {
+          title: "Revision on the set of rational number",
+          subTopic: [
+            {
+              title: 'The number system'
+            },
+            {
+              title: 'Common factor and common multiple'
+            },
+            {
+              title: 'Rational number'
+            }
+
+          ]
+
+        },
+        {
+          title: "The real number system",
+          subTopic: [
+            {
+          
+              title: 'The number system'
+            },
+            {
+              title: 'Common factor and common multiple'
+            },
+            {
+              title: 'Rational number'
+            }
+
+          ]
+
+        }
+      ]
+
+
+    }
+   
+    ,
+    {
+      title: "Unit 1: The number system",
+      topic: [
+        {
+         
+          title: "Revision on the set of rational number",
+          subTopic: [
+            {
+              title: 'The number system'
+            },
+            {
+              title: 'Common factor and common multiple'
+            },
+            {
+              title: 'Rational number'
+            }
+          ]
+
+        },
+        {
+          title: "The real number system",
+          subTopic: [
+            {
+          
+              title: 'The number system'
+            },
+            {
+              title: 'Common factor and common multiple'
+            },
+            {
+              title: 'Rational number'
+            }
+
+          ]
+
+        }
+      ]
+
+
+    }
+   
+  
+  ]
+
+  const [selectedLanguage, setSelectedLanguage] = useState('Dha Anywaa')
+  const [isExpanded, setIsExpanded] = useState(false);
+  // const [subTopicsVisible, setSubTopicsVisible] = useState(false);
+
+  // const toggleExpand = () => setIsExpanded((prev) => !prev);
+  // const toggleSubTopics = () => setSubTopicsVisible((prev) => !prev);
+
+  const handleLanguage = (e) => {
+    console.log(e.target.value)
+    setSelectedLanguage(e.target.value)
+  }
+
+
+   const [expandedCourse, setExpandedCourse] = useState(null);
+   const [subTopicsVisible, setSubTopicsVisible] = useState(null);
+   
+   const toggleExpand = (index) => {
+     // Toggle the expanded state for the selected course
+     setExpandedCourse((prev) => (prev === index ? null : index));
+   };
+   
+   const toggleSubTopics = (index) => {
+     // Toggle the visibility of subtopics for a specific topic
+     setSubTopicsVisible((prev) => (prev === index ? null : index));
+     setIsExpanded(!isExpanded)
+
+   };
+ 
     return (
         <div>
         <div className='flex items-center'>
@@ -15,8 +203,139 @@ const CourseInfo = ()=> {
         <h1 className="text-gray-800">Mathematics </h1>
       </div>
 
-      <div className="flex gap-3">
-        <div className="w-70 h-full"></div>
+      <div className=" flex flex-col-reverse gap-2 md:flex-row">
+      {//  the first row with detail of the course 
+      }
+        <div className="w-full md:w-[70%] pt-3 h-screen ">
+          <div className="flex gap-2">
+            <img className=" h-12 w-28" src={atsa}></img>
+            <div className="w-[1px] h-12 bg-gray-700"></div>
+            
+            <div className=" h-12 flex justify-center items-center w-28 border border-l-8 bottom-2 border-teal-800 rounded-md">Course</div>
+          </div>
+
+          <h1 className="text-2xl md:text-4xl py-3">Mathematics for grade 9</h1>
+          <p className="pb-2">Explore essential Grade 9 mathematics concepts with clear explanations and practical applications to build a strong foundation for future learning</p>
+          <select value={selectedLanguage} onChange={handleLanguage}  className="w-64 p-1  border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="Dha anywaa">Dha anywaa</option>
+          <option value="English">English</option>
+          <option value="Amharic">Amharic</option>
+          </select>
+          <h3 className="font-semibold text-gray-500 py-2">AVAILABLE LANGUAGES</h3>
+          <p className="italic">Dha anywaa, english, amharic</p>
+
+          <div className="flex gap-5 pt-3 border-b-[1px]  items-center p-4 border-gray-300">
+            <h2 className="text-slate-600 font-semibold text-2xl">Overview</h2>
+            <div className="w-[2px] h-5 bg-gray-400"></div>
+            <h2 className="text-slate-600 font-semibold text-2xl">Cariculum</h2>
+          </div>
+
+          <div className="flex flex-col gap-4 py-3 space-x-1 text-[18px] text-gray-700">
+            <p>Grade 9 mathematics serves as a pivotal stage in building a solid foundation for advanced mathematical concepts.
+              Students are introduced to a mix of algebra, geometry, and statistics to develop critical thinking skills.
+              This course emphasizes practical applications, encouraging learners to connect math with real-life problems.
+              With engaging lessons, students enhance their ability to analyze patterns, relationships, and logical reasoning</p>
+
+          <p>Key topics include linear equations, quadratic functions, coordinate geometry, and introductory trigonometry.
+            Students will explore probability and statistics, learning to interpret and represent data effectively.
+            The curriculum challenges learners to solve problems systematically, fostering resilience and creativity.
+            Interactive teaching methods and consistent practice help build confidence and mastery in mathematics.
+            By the end of the course, students are well-prepared for higher-level math and its applications in various fields.</p>
+          </div>
+
+          <h1 className="text-2xl md:text-4xl pb-5">Here’s what you will learn.</h1>
+
+    <div className=" flex flex-col gap-3">
+    {courseList.map((course, index) => {
+        return (
+          <motion.div
+            key={course.title}
+            className="border border-gray-300 rounded-lg p-4 shadow-md w-full cursor-pointer"
+            whileTap={{ scale: 0.98 }}
+          >
+            {/* Leading Section */}
+            <div className="flex items-center justify-between" onClick={() => toggleExpand(index)}>
+              <div className="flex justify-center items-center rounded-full border-2 h-20 w-20 border-teal-800">
+                <div className="flex justify-center items-center rounded-full border-[1px] h-16 w-16 border-teal-800">
+                  <MdOutlineSubject size={30} />
+                </div>
+              </div>
+              {/* IoIosArrowUp,IoIosArrowDown */}
+              <h2 className="flex-1 mx-4 text-lg font-semibold"> { course.title}</h2>
+              <motion.div
+                initial={{ rotate: 0 }}
+                animate={{ rotate: expandedCourse === index ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+                className="text-teal-800"
+              >
+                {expandedCourse === index ? <FaChevronUp size={20} /> : <FaChevronDown size={20} />}
+              </motion.div>
+            </div>
+
+            {/* Expandable Content */}
+            {expandedCourse === index && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                className="mt-4"
+              >
+                {/* Iterate over course topics */}
+                {course.topic.map((subtitle, idx) => {
+                  return (
+                    <div key={idx}>
+                      <p className="flex gap-1 items-center" onClick={() => toggleSubTopics(idx)}> <span className="rounded-full  border-[1px] border-teal-800 items-center justify-center p-[2px]">{subTopicsVisible === idx? <IoIosArrowUp/>: <IoIosArrowDown/> }</span> {subtitle.title}</p>
+                      {subtitle.subTopic && subtitle.subTopic.length > 0 && (
+                        <ul
+                          className="mt-2 pl-4 list-disc text-gray-600"
+                        >
+                          {subTopicsVisible === idx &&  (
+                            <motion.ul
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              className="mt-2 pl-4 list-disc text-gray-600"
+                            >
+                              {subtitle.subTopic.map((sub, subIdx) => (
+                                <li key={subIdx}>{sub.title}</li>
+                              ))}
+                            </motion.ul>
+                          )}
+                        </ul>
+                      )}
+                    </div>
+                  );
+                })}
+              </motion.div>
+            )}
+          </motion.div>
+        );
+      })}</div>
+        </div>
+        <div className="w-full md:w-[30%] h-screen bg-slate-200 ">
+          <img className="h-[50%]" src={math_9}/>
+          <div className="flex gap-4 justify-between px-1 mt-5">
+            <div className="flex flex-col gap-2 items-center">
+            <IoIosUnlock size={45}/> 
+            <p>Free</p>
+            </div>
+            <div className="flex flex-col gap-2 items-center">
+            <FaRegClock size={43}/> 
+            <p>20 hours</p>
+            </div>
+      
+            <div  className="flex flex-col gap-2 items-center">
+            <HiMiniChartBar size={43} /> 
+            <p>Begginer</p>
+            </div>
+            <div  className="flex flex-col gap-2 items-center">
+            <ImLab size={40}/> 
+            <p>Labs</p>
+
+            </div>
+
+          </div>
+        </div>
         
       </div>
 

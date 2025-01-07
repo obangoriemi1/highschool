@@ -50,7 +50,7 @@ const Header = () => {
 
     <div className='flex items-center justify-between text-sm py-4 mb-5 border-b border-b-gray-400'>
      <Link to={"/"}> 
-     <span className="text-2xl dark:bg-[#2a9df4] light:bg-teal-800 dark:text-white p-2 rounded-lg">SmartBrains</span>
+     <span className="text-2xl dark:bg-[#2a9df4] bg-teal-800 text-white p-2 rounded-lg">SmartBrains</span>
      </Link>
       <ul className='hidden md:flex items-start gap-5 font-medium'>
         <NavLink to={"/"}>
