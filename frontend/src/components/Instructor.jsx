@@ -54,13 +54,13 @@ const Instructor = ()=> {
   >
 
     {instructorList.map((instructor, index) =>{
-      return (  <motion.div  key={index}  variants={itemVariants} className="relative h-auto md:w-[27%] border-b dark:border-[#2a9df4] light:border-teal-800   light:bg-white shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+      return (  <motion.div  key={index}  variants={itemVariants} className="relative h-auto md:w-[27%] border-b dark:border-[#2a9df4] border-teal-800   bg-white shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out">
         <img src={imageList[index]} alt="Instructor Oriemi" className="w-full h-56 object-cover" />
         <div className="p-4">
-          <h3 className="font-semibold text-lg dark:text-gray-100 light:text-gray-800 hover:text-teal-800 dark:hover:text-blue-600 transition-colors duration-200">
+          <h3 className="font-semibold text-lg dark:text-gray-100 text-gray-800 hover:text-teal-800 dark:hover:text-blue-600 transition-colors duration-200">
             {instructor.name}
           </h3>
-          <p className="italic dark:text-gray-300 light:text-gray-600 text-sm">
+          <p className="italic dark:text-gray-300 text-gray-600 text-sm">
             {
               instructor.description
             }

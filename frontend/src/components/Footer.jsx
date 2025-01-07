@@ -2,7 +2,7 @@
 
 const Footer =()=> {
     return (
-        <div className="h-96 bottom-0 mt-56 light:bg-gray-100 w-full bg-slate-400">
+        <div className="h-96 bottom-0 mt-56 light:bg-gray-100 w-full dark:bg-slate-800 bg-slate-400">
             <hr></hr>
 
             <div className="flex justify-center items-center text-gray-600 text-xl">

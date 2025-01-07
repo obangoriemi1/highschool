@@ -193,44 +193,44 @@ const CourseInfo = ()=> {
    };
  
     return (
-        <div>
+        <div className="">
         <div className='flex items-center'>
         <Link> 
          <NavLink to={'/courses'}>
-        <h1 className="flex font-semibold gap-1 items-center text-black">Catalog <span className="flex items-center"><IoIosArrowForward size={18} /></span></h1>
+        <h1 className="flex font-semibold gap-1 items-center dark:text-white text-black">Catalog <span className="flex items-center"><IoIosArrowForward size={18} /></span></h1>
         </NavLink> 
         </Link>
-        <h1 className="text-gray-800">Mathematics </h1>
+        <h1 className="text-gray-800 dark:text-gray-300">Mathematics </h1>
       </div>
 
       <div className=" flex flex-col-reverse gap-2 md:flex-row">
       {//  the first row with detail of the course 
       }
-        <div className="w-full md:w-[70%] pt-3 h-screen ">
+        <div className="w-full md:w-[70%] pt-3 ">
           <div className="flex gap-2">
             <img className=" h-12 w-28" src={atsa}></img>
             <div className="w-[1px] h-12 bg-gray-700"></div>
             
-            <div className=" h-12 flex justify-center items-center w-28 border border-l-8 bottom-2 border-teal-800 rounded-md">Course</div>
+            <div className=" h-12 flex justify-center items-center w-28 border border-l-8 bottom-2 dark:border-[#2a9df4] border-teal-800 rounded-md">Course</div>
           </div>
 
           <h1 className="text-2xl md:text-4xl py-3">Mathematics for grade 9</h1>
           <p className="pb-2">Explore essential Grade 9 mathematics concepts with clear explanations and practical applications to build a strong foundation for future learning</p>
-          <select value={selectedLanguage} onChange={handleLanguage}  className="w-64 p-1  border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <option value="Dha anywaa">Dha anywaa</option>
-          <option value="English">English</option>
-          <option value="Amharic">Amharic</option>
+          <select value={selectedLanguage} onChange={handleLanguage}  className="w-64 p-1 dark:bg-transparent  border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-800 dark:focus:ring-blue-500">
+            <option  value="Dha anywaa" className="dark:bg-slate-900 dark:text-white bg-white text-black">Dha anywaa</option>
+            <option value="English" className="dark:bg-slate-900 dark:text-white bg-white text-black">English</option>
+            <option value="Amharic" className="dark:bg-slate-900 dark:text-white bg-white text-black">Amharic</option>
           </select>
           <h3 className="font-semibold text-gray-500 py-2">AVAILABLE LANGUAGES</h3>
           <p className="italic">Dha anywaa, english, amharic</p>
 
           <div className="flex gap-5 pt-3 border-b-[1px]  items-center p-4 border-gray-300">
-            <h2 className="text-slate-600 font-semibold text-2xl">Overview</h2>
+            <h2 className="text-slate-600 dark:text-gray-300 font-semibold text-2xl">Overview</h2>
             <div className="w-[2px] h-5 bg-gray-400"></div>
-            <h2 className="text-slate-600 font-semibold text-2xl">Cariculum</h2>
+            <h2 className="text-slate-600 font-semibold dark:text-gray-300 text-2xl">Cariculum</h2>
           </div>
 
-          <div className="flex flex-col gap-4 py-3 space-x-1 text-[18px] text-gray-700">
+          <div className="flex flex-col gap-4 py-3 space-x-1 text-[18px] dark:text-gray-200 text-gray-700">
             <p>Grade 9 mathematics serves as a pivotal stage in building a solid foundation for advanced mathematical concepts.
               Students are introduced to a mix of algebra, geometry, and statistics to develop critical thinking skills.
               This course emphasizes practical applications, encouraging learners to connect math with real-life problems.
@@ -255,8 +255,8 @@ const CourseInfo = ()=> {
           >
             {/* Leading Section */}
             <div className="flex items-center justify-between" onClick={() => toggleExpand(index)}>
-              <div className="flex justify-center items-center rounded-full border-2 h-20 w-20 border-teal-800">
-                <div className="flex justify-center items-center rounded-full border-[1px] h-16 w-16 border-teal-800">
+              <div className="flex justify-center items-center rounded-full border-2 h-20 w-20 dark:border-[#2a9df4] border-teal-800">
+                <div className="flex justify-center items-center rounded-full border-[1px] h-16 w-16 dark:border-[#2a9df4] border-teal-800">
                   <MdOutlineSubject size={30} />
                 </div>
               </div>
@@ -266,7 +266,7 @@ const CourseInfo = ()=> {
                 initial={{ rotate: 0 }}
                 animate={{ rotate: expandedCourse === index ? 180 : 0 }}
                 transition={{ duration: 0.2 }}
-                className="text-teal-800"
+                className="text-teal-800 dark:text-[#2a9df4]"
               >
                 {expandedCourse === index ? <FaChevronUp size={20} /> : <FaChevronDown size={20} />}
               </motion.div>
@@ -294,7 +294,7 @@ const CourseInfo = ()=> {
                               initial={{ opacity: 0, height: 0 }}
                               animate={{ opacity: 1, height: "auto" }}
                               exit={{ opacity: 0, height: 0 }}
-                              className="mt-2 pl-4 list-disc text-gray-600"
+                              className="mt-2 pl-4 list-disc dark:text-gray-200 text-gray-600"
                             >
                               {subtitle.subTopic.map((sub, subIdx) => (
                                 <li key={subIdx}>{sub.title}</li>
@@ -312,7 +312,7 @@ const CourseInfo = ()=> {
         );
       })}</div>
         </div>
-        <div className="w-full md:w-[30%] h-screen bg-slate-200 ">
+        <div className="w-full md:w-[30%] dark:bg-slate-800 h-screen bg-slate-200 ">
           <img className="h-[50%]" src={math_9}/>
           <div className="flex gap-4 justify-between px-1 mt-5">
             <div className="flex flex-col gap-2 items-center">
