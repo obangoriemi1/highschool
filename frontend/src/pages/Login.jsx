@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
 const Login = () => {
-  const [state, setState] = useState('Sign Up')
+
+  const [state, setState] = useState("Sign Up")
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -31,10 +32,14 @@ const Login = () => {
           <p>Password</p>
           <input className='border border-zinc-300 rounded w-full p-2 mt-1 ' onChange={(e) => setPassword(e.target.value)} value={password} type="password" />
         </div>
-        <button className='bg-primary text-white w-full py-2 rounded-md text-base' >{state === "Sign Up" ? "Create Account" : "Login"}</button>
-         {state === "Sign Up" ? <p>Already have an account ?
+
+        <button className='bg-teal-700 text-white w-full py-2 rounded-md text-base' >{state === "Sign Up" ? "Create Account" : "Login"}</button>
+
+         {
+            state === "Sign Up" ? <p>Already have an account ?
            <span onClick={() => setState("Login")} className='text-green-500 underline cursor-pointer'>Log in here</span></p> : <p>Create a new account ? 
-            <span onClick={() => setState("Sign Up")} className='text-green-500 underline cursor-pointer'>click here</span></p>}
+            <span onClick={() => setState("Sign Up")} className='text-green-500 underline cursor-pointer'>click here</span></p>
+          }
       </div>
     </form>
   )
