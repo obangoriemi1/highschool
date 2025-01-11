@@ -16,8 +16,6 @@ import { ImLab } from "react-icons/im";
 
 
 
-
-
 const CourseInfo = ()=> {
 
   const courseList = [
@@ -310,11 +308,23 @@ const CourseInfo = ()=> {
             )}
           </motion.div>
         );
-      })}</div>
+      })}
+      </div>
+
+      
+
+        <NavLink to={"/course"}>
+        <div className="flex justify-center items-center">
+        <div className="font-bold text-xl  mt-10 border-[1px] dark:border-[#2a9df4] hover:text-teal-800 transition cursor-pointer dark:hover:text-[#2a9df4] border-teal-800 p-3 flex justify-center items-center rounded-md shadow-sm">Enroll today</div>
+        </div>
+
+            </NavLink>
+
         </div>
         <div className="w-full md:w-[30%] dark:bg-slate-800 h-screen bg-slate-200 ">
           <img className="h-[50%]" src={math_9}/>
-          <div className="flex gap-4 justify-between px-1 mt-5">
+         <div className="sticky top-0">
+           <div className="flex gap-4 justify-between px-1 mt-5">
             <div className="flex flex-col gap-2 items-center">
             <IoIosUnlock size={45}/> 
             <p>Free</p>
@@ -335,6 +345,9 @@ const CourseInfo = ()=> {
             </div>
 
           </div>
+
+          <p className="pl-2 font-semibold my-1"><span className="text-gray-400 font-semibold text-xl">Instructor:</span> Oriemi Obang</p>
+         </div>
         </div>
         
       </div>

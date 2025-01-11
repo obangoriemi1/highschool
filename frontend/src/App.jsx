@@ -13,6 +13,7 @@ import CourseInfo from './pages/CourseInfo';
 
 import Footer from './components/Footer';
 import Login from './pages/Login';
+import Course from './pages/Course';
 
 const App = () => {
   return (
@@ -31,13 +32,14 @@ const App = () => {
        <Route path='/computer' element={<Computer/>}></Route>
        <Route path='/highschool' element={<Highschool/>}></Route>
        <Route path='/course-info' element={<CourseInfo/>}></Route>
+       <Route path='/course' element={<Course/>}></Route>
      </Routes>
     
 
    </BrowserRouter>
   
      </div>
-     <Footer/>
+     {/* <Footer/> */}
   </div>
   )
 }
