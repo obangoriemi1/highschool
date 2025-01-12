@@ -235,7 +235,7 @@ const CourseInfo = ()=> {
         <h1 className="flex font-semibold gap-1 items-center dark:text-white text-black">Catalog <span className="flex items-center"><IoIosArrowForward size={18} /></span></h1>
         </NavLink> 
         </Link>
-        <h1 className="text-gray-800 dark:text-gray-300">Mathematics </h1>
+        <h1 className="text-gray-800 dark:text-gray-300">{courseData.title} </h1>
       </div>
 
       <div className=" flex flex-col-reverse gap-2 md:flex-row">
