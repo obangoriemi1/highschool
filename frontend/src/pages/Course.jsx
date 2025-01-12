@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { MdOutlineSubject } from "react-icons/md";
 import { IoIosArrowUp,IoIosArrowDown } from "react-icons/io";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { CgCompress } from "react-icons/cg";
 import { AiOutlineExpandAlt } from "react-icons/ai";
@@ -16,13 +16,61 @@ import { FaAngleLeft } from "react-icons/fa6";
 
 const Course = ()=> {
 
+
+
   const [hideBar, setHideBar] = useState(false)
   const [isFullScreen, setIsFullScreen] = useState(false)
+
+     
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [expandedCourse, setExpandedCourse] = useState(null);
+   const [subTopicsVisible, setSubTopicsVisible] = useState(null);
+   const containerRef = useRef(null);
   const handleBar = ()=> {
     setHideBar(!hideBar)
   }
 
-  const containerRef = useRef(null);
+    const [courseData, setCourseData] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  
+    const fetchData = (course)=> {
+      const path =`/api/course/subject/${course}`
+      //http://localhost:3000/api/course/language
+      console.log(path)
+      fetch(path)
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Error fetching subject data');
+          }
+          return response.json();
+      })
+      .then(data => {
+          setCourseData(data)
+          console.log(data)
+          setLoading(false);
+      })
+      .catch(err => {
+          setError(err.message);
+          setLoading(false);
+      });
+    }
+  
+    useEffect(()=> {
+      fetchData(localStorage.getItem('course'))
+    }, [])
+  
+    if (loading) {
+      return (<div>Loading...</div>);
+    }
+    
+    if (error) {
+      return (<div>Error: {`error here ${error}`}</div>);
+    }
+  
+  
+
+
 
   const handleFullScreen = () => {
       if (containerRef.current.requestFullscreen) {
@@ -317,10 +365,7 @@ const Course = ()=> {
       
       ]
 
-   
-        const [isExpanded, setIsExpanded] = useState(false);
-          const [expandedCourse, setExpandedCourse] = useState(null);
-           const [subTopicsVisible, setSubTopicsVisible] = useState(null);
+
            
            const toggleExpand = (index) => {
              // Toggle the expanded state for the selected course
@@ -345,7 +390,7 @@ const Course = ()=> {
                 <div className="w-[50%] flex justify-center items-center p-5">Resourse</div>
             </div>
 
-            {courseList.map((course, index) => {
+            {courseData.unit.map((course, index) => {
         return (
           <motion.div
             key={course.title}
@@ -384,7 +429,7 @@ const Course = ()=> {
                   return (
                     <div key={idx}>
                       <p className="flex gap-1 items-center" onClick={() => toggleSubTopics(idx)}> <span className="rounded-full  border-[1px] border-teal-800 items-center justify-center p-[2px]">{subTopicsVisible === idx? <IoIosArrowUp/>: <IoIosArrowDown/> }</span> {subtitle.title}</p>
-                      {subtitle.subTopic && subtitle.subTopic.length > 0 && (
+                      {subtitle.subtopic && subtitle.subtopic.length > 0 && (
                         <ul
                           className="mt-2 pl-4 list-disc text-gray-600"
                         >
@@ -395,7 +440,7 @@ const Course = ()=> {
                               exit={{ opacity: 0, height: 0 }}
                               className="mt-2 pl-4 list-disc dark:text-gray-200 text-gray-600"
                             >
-                              {subtitle.subTopic.map((sub, subIdx) => (
+                              {subtitle.subtopic.map((sub, subIdx) => (
                                 <li key={subIdx}>{sub.title}</li>
                               ))}
                             </motion.ul>
@@ -425,7 +470,7 @@ const Course = ()=> {
 
                 <div className="flex gap-2 items-center pt-2 px-3 ">
                      <div><MdOutlineMenuOpen onClick={handleBar} size={30} /></div> 
-                    <p className="text-xl">Introduction to grade 9 maths</p>
+                    <p className="text-xl">{courseData.title}</p>
                 </div>
                {!isFullScreen &&  <div><AiOutlineExpandAlt onClick={handleFullScreen} size={30} /></div>}
 

@@ -4,7 +4,7 @@
     "description": "A comprehensive list of math courses covering fundamental and advanced concepts for analytical and problem-solving skills.",
     "courses":[
         {
-            "id": 1,
+            "id": "math9",
             "title": "Mathematics for Grade 9",
             "image": "math_9",
             "decription": "Mathematics for Grade 9 focuses on building a strong foundation in algebra, geometry, and statistics. Students explore concepts like linear equations, quadratic functions, and geometric...",
@@ -16,7 +16,7 @@
           
           },
             {
-            "id": 2,
+            "id": "math10",
             "title": "Mathematics for Grade 10",
             "image": "math_10",
             "decription": "Mathematics for Grade 10 emphasizes advanced algebra, trigonometry, and introductory calculus. Students develop problem-solving skills by exploring quadratic equations, trigonometric functions...",
@@ -27,7 +27,7 @@
           
           },
             {
-            "id": 1,
+            "id": "math11",
             "title": "Mathematics for Grade 11",
             "image": "math_11",
             "decription": "Grade 11 Mathematics dives deeper into functions, sequences, and advanced trigonometry. Students also study probability, statistics, and introductory calculus, laying the groundwork for critical...",

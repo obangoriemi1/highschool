@@ -4,7 +4,7 @@
     "description": "Explore a comprehensive list of engaging chemistry courses designed to deepen your understanding of chemical principles and their real-world applications.",
     "courses":[
         {
-            "id": 1,
+            "id": "chemo9",
             "title": "Chemistry for Grade 9",
             "decription": "Grade 9 Chemistry lays the foundation for understanding the world of matter. Students explore key topics such as atoms, molecules, and chemical reactions, learning how substances interact and transform...",
             "instructor": "Oriemi Obang",
@@ -15,7 +15,7 @@
           
           },
             {
-            "id": 2,
+            "id": "chemo10",
             "title": "Chemistry for Grade 10",
             "decription": "Grade 10 Chemistry delves deeper into chemical principles, exploring concepts like the periodic table, chemical bonding, and stoichiometry. Students learn to analyze chemical equations and understand...",
             "instructor": "Oriemi Obang",
@@ -25,7 +25,7 @@
           
           },
             {
-            "id": 1,
+            "id": "chemo11",
             "title": "Chemistry for grade 11",
             "decription": "Grade 11 Chemistry expands on prior knowledge with advanced topics such as thermodynamics, equilibrium, and organic chemistry. Students investigate complex chemical systems and their practical applications...",
             "instructor": "Oriemi Obang",

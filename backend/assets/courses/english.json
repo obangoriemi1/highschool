@@ -4,7 +4,7 @@
     "description": "A comprehensive list of math courses covering fundamental and advanced concepts for analytical and problem-solving skills.",
     "courses":[
         {
-            "id": 1,
+            "id": "eng9",
             "title": "English for Grade 9",
             "decription": "Grade 9 English focuses on building foundational language skills, including grammar, vocabulary, and writing. Students explore a variety of literary genres, analyze themes, and develop critical thinking through reading and discussions. This course lays the groundwork for effective communication and creative expression.",
             "instructor": "Oriemi Obang",
@@ -15,7 +15,7 @@
           
           },
             {
-            "id": 2,
+            "id": "eng10",
             "title": "English for Grade 10",
             "decription": "Grade 10 English enhances language proficiency with a focus on advanced grammar, composition, and oral communication. Students engage with diverse texts, including poetry, prose, and drama, honing analytical and interpretive skills. The course prepares students for academic and professional success.",
             "instructor": "Oriemi Obang",
@@ -25,7 +25,7 @@
           
           },
             {
-            "id": 1,
+            "id": "eng11",
             "title": "English for Grade 11",
             "decription": "Grade 11 English emphasizes literary analysis, persuasive writing, and research skills. Students explore complex texts, including classic and modern literature, to deepen their understanding of themes, structure, and style. This course equips students with advanced communication skills for higher education and beyond.",
             "instructor": "Oriemi Obang",

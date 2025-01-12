@@ -4,7 +4,7 @@
     "description": "Explore the fundamentals of Physics, from motion and energy to forces, with courses designed to build a strong foundation and enhance problem-solving skills",
     "courses":[
         {
-            "id": 1,
+            "id": "phy9",
             "title": "Physics for Grade 9",
             "decription": "Grade 9 Physics introduces fundamental concepts such as motion, energy, and forces. Students explore basic principles and engage in hands-on experiments to understand the physical world...",
             "instructor": "Oriemi Obang",
@@ -15,7 +15,7 @@
           
           },
             {
-            "id": 2,
+            "id": "phy10",
             "title": "Physics for Grade 10",
             "decription": "Grade 10 Physics deepens understanding of energy transfer, waves, and electrical circuits. Students apply theoretical knowledge to real-life situations through practical experiments and problem-solving...",
             "instructor": "Oriemi Obang",
@@ -25,7 +25,7 @@
           
           },
             {
-            "id": 1,
+            "id": "phy11",
             "title": "Physics for Grade 11",
             "decription": "Grade 11 Physics covers more advanced topics, including mechanics, thermodynamics, and electromagnetism. Students develop critical thinking and analytical skills through complex experiments and theoretical challenges...",
             "instructor": "Oriemi Obang",

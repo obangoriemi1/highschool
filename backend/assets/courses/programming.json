@@ -4,7 +4,7 @@
     "description": "Master the essentials of programming with courses covering a range of languages and concepts, designed to build practical coding skills for real-world applications.",
     "courses":[
         {
-            "id": 1,
+            "id": "html",
             "title": "HTML",
             "decription": "HTML forms the backbone of web development, providing the structure for creating web pages. Students learn to use HTML tags to build content, structure layouts, and embed multimedia...",
             "instructor": "Kuch Obang",
@@ -15,7 +15,7 @@
           
           },
             {
-            "id": 2,
+            "id": "css",
             "title": "CSS",
             "decription": "CSS enhances the visual appeal of web pages, enabling students to style and layout content effectively. The course covers design principles, including colors, fonts, and responsive layouts...",
             "instructor": "Kuch Obang",
@@ -25,7 +25,7 @@
           
           },
             {
-            "id": 1,
+            "id": "js",
             "title": "Javascript",
             "decription": "JavaScript brings interactivity to websites, allowing students to create dynamic content and user experiences. The course covers essential programming concepts like variables, functions, and event handling...",
             "instructor": "Kuch Obang",

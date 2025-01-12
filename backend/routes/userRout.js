@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/:subject', getSubject)
 
 // get the a single course 
-router.get('/:subject/:course', getCourse)
+router.get('/subject/:course', getCourse)
 //log in and register routes
 router.post("/register", registerUser)
 router.post("/login", loginUser)

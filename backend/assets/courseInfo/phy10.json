@@ -1,0 +1,247 @@
+{
+    "title": "Mathimatic for grade 9",
+    "short_description": "Explore essential Grade 9 mathematics concepts with clear explanations and practical applications to build a strong foundation for future learning",
+    "full_description1": "Grade 9 mathematics serves as a pivotal stage in building a solid foundation for advanced mathematical concepts. Students are introduced to a mix of algebra, geometry, and statistics to develop critical thinking skills. This course emphasizes practical applications, encouraging learners to connect math with real-life problems. With engaging lessons, students enhance their ability to analyze patterns, relationships, and logical reasoning",
+    "full_description2": "Key topics include linear equations, quadratic functions, coordinate geometry, and introductory trigonometry. Students will explore probability and statistics, learning to interpret and represent data effectively. The curriculum challenges learners to solve problems systematically, fostering resilience and creativity. Interactive teaching methods and consistent practice help build confidence and mastery in mathematics. By the end of the course, students are well-prepared for higher-level math and its applications in various fields.",    "hours": "20 hours",
+    "instructor": "Oriemi Obang",
+    "availability": "Free",
+    "level": "Intermediate",
+    "unit": [
+        {
+            "title": "Course introduction",
+            "topic": [
+                {
+                    "title": "introduction",
+                    "subtopic":[
+                        {   "title":"intro",
+                            "note": "",
+                            "videoLink": ""
+                        }
+                    ]
+                }
+
+            ]
+        },
+        {
+            "title": "Unit 1: The number System",
+            "topic": [
+                {
+                    "id": "1.1",
+                    "title": "Revision on the set of rational numbers",
+                    "subtopic":[
+                          
+                        {     "id": "1.1.1",
+                            "title":"Natural Number, Integers, Prime Numbers and Composite Numbers",
+                            "note": "",
+                            "videoLink": ""
+                        },
+                        {   
+                            "id": "1.1.2",
+                            "title":"Common Factors and Common Multiples",
+                            "note": "",
+                            "videoLink": ""
+                    },
+                    {   
+                        "id": "1.1.3",
+                        "title":"Rational Numbers",
+                        "note": "",
+                        "videoLink": ""
+                }
+                    ]
+                },
+                {
+                    "id":"1.2",
+                    "title": "The Real Number System",
+                    "subtopic":[
+                        {   
+                            "id": "1.2.1",
+                            "title":"Representation of Rational Numbers by Decimals",
+                            "note": "",
+                            "videoLink": ""
+                        },
+                        {   
+                            "id": "1.2.2",
+                            "title":"Irratinal Numbers",
+                            "note": "",
+                            "videoLink": ""
+                        },
+                        {   
+                            "id": "1.2.3",
+                            "title":"Real Numbers",
+                            "note": "",
+                            "videoLink": ""
+                        },
+                        {   
+                            "id": "1.2.4",
+                            "title":"Exponents and Radicals",
+                            "note": "",
+                            "videoLink": ""
+                        },
+                        
+                        {   
+                            "id": "1.2.5",
+                            "title":"The Four Operations on Real Numbers",
+                            "note": "",
+                            "videoLink": ""
+                        },
+                         
+                        {   
+                            "id": "1.2.6",
+                            "title":"Limits of Accuracy",
+                            "note": "",
+                            "videoLink": ""
+                        },
+                          
+                        {   
+                            "id": "1.2.7",
+                            "title":"Scientific Notation",
+                            "note": "",
+                            "videoLink": ""
+                        },
+                        {   
+                            "id": "1.2.8",
+                            "title":"Rationalization",
+                            "note": "",
+                            "videoLink": ""
+                        }, 
+                          {   
+                            "id": "1.2.9",
+                            "title":"Euclid's Division Algorithm",
+                            "note": "",
+                            "videoLink": ""
+                        }, 
+                        {
+                            "id": "intro",
+                            "title": "Summary",
+                            "note": "",
+                            "videoLink": ""
+                        }, 
+                        {
+                            "id": "exercise",
+                            "title": "Exercise",
+                            "note": "",
+                            "videoLink": ""
+                        }
+                        
+                        
+                    ]
+                }
+
+            ]
+        },
+        {
+            "title": "Unit 2: Solutions of Equations", 
+            "topic": [
+                {
+                    "id": "2.1",
+                    "title": "Equations Involving Exponents and Radical",
+                    "subtopic": [
+                        {
+                            "id":"2.1",
+                            "title": "Equations Involving Exponents and Radical",
+                            "note": "",
+                            "videoLink": ""
+
+                        }
+                    ]
+                },
+                {
+                    "id": "2.2",
+                    "title": "System of Linear Equations In Two Variables",
+                    "subtopic": [
+                        {
+                            "id":"2.2",
+                            "title": "System of Linear Equations In Two Variables",
+                            "note": "",
+                            "videoLink": ""
+
+                        }
+                    ]
+                },
+                {
+                    "id": "2.3",
+                    "title": "Equations Involving Absolute Values",
+                    "subtopic": [
+                        {
+                            "id":"2.3",
+                            "title": "Equations Involving Absolute Values",
+                            "note": "",
+                            "videoLink": ""
+
+                        }
+                    ]
+                },
+                {
+                    "id": "2.4",
+                    "title": "Quadratic Equations",
+                    "subtopic": [
+                        {
+                            "id":"2.4",
+                            "title": "Quadratic Equations",
+                            "note": "",
+                            "videoLink": ""
+
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Unit 3: Further On Sets", 
+            "topic": [
+                {
+                    "id": "3.1",
+                    "title": "Ways To Describe Sets",
+                    "subtopic": [
+                        {
+                            "id":"3.1.1",
+                            "title": "Equations Involving Exponents and Radical",
+                            "note": "",
+                            "videoLink": ""
+
+                        }
+                    ]
+                },
+                {
+                    "id": "2.2",
+                    "title": "System of Linear Equations In Two Variables",
+                    "subtopic": [
+                        {
+                            "id":"2.2",
+                            "title": "System of Linear Equations In Two Variables",
+                            "note": "",
+                            "videoLink": ""
+
+                        }
+                    ]
+                },
+                {
+                    "id": "2.3",
+                    "title": "Equations Involving Absolute Values",
+                    "subtopic": [
+                        {
+                            "id":"2.3",
+                            "title": "Equations Involving Absolute Values",
+                            "note": "",
+                            "videoLink": ""
+
+                        }
+                    ]
+                },
+                {
+                    "id": "2.4",
+                    "title": "Quadratic Equations",
+                    "subtopic": [
+                        {
+                            "id":"2.4",
+                            "title": "Quadratic Equations",
+                            "note": "",
+                            "videoLink": ""
+
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

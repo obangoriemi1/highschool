@@ -26,10 +26,25 @@ const getSubject= (req, res)=> {
     })
 }
 
+
+
+
 // read a single course
 const getCourse = (req, res)=> {
-    const {subject, course} = req.params
-    res.json({"course": "course here"})
+    const { course} = req.params
+    const filePath = path.join(__dirname, `../assets/courseInfo/${course}.json`)
+
+    // Read the file 
+    fs.readFile(filePath, 'utf8', (err, data)=> {
+        if(err) {
+            console.error(err)
+            return res.status(500).send(`Error reading the file ${course}` )
+        }
+       
+
+        const currentCourse = JSON.parse(data)
+        return res.json(currentCourse)
+    })
 }
 
 const registerUser = async(req,res) =>{

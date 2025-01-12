@@ -4,7 +4,7 @@
     "description": "Explore the fascinating world of living organisms with our biology courses, covering key concepts in genetics, ecology, and human biology.",
     "courses":[
         {
-            "id": 1,
+            "id": "bio9",
             "title": "Biology for Grade 9",
             "decription": "Grade 9 Biology introduces students to the basics of life science, including cells, ecosystems, and the human body. Students engage in hands-on activities to explore biological processes...",
             "instructor": "Oriemi Obang",
@@ -15,7 +15,7 @@
           
           },
             {
-            "id": 2,
+            "id": "bio10",
             "title": "Biology for Grade 10",
             "decription": "Grade 10 Biology deepens understanding of genetics, evolution, and plant and animal physiology. Students learn to analyze biological systems and their interactions with the environment....",
             "instructor": "Oriemi Obang",
@@ -25,7 +25,7 @@
           
           },
             {
-            "id": 1,
+            "id": "bio11",
             "title": "Biology for grade 11",
             "decription": "Grade 11 Biology covers complex topics such as human anatomy, biochemistry, and ecology. Students develop critical thinking skills through detailed study and practical experiments...",
             "instructor": "Oriemi Obang",
