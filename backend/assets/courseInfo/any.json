@@ -1,0 +1,187 @@
+{
+    "title": "Dha anywaa",
+    "short_description": "The Dha Anywaa beginner course is perfect for those starting to learn reading in the Dha Anywaa language. Covering alphabets, numbers, words, sentences, and more, it builds a strong foundation step by step.",
+    "full_description1": "Discover the beauty of the Dha Anywaa language with this comprehensive beginner course! Start with the basics like alphabets and numbers, and gradually advance to words and complete sentences. Each topic is designed to make learning easy and interactive, helping you gain confidence in reading Dha Anywaa.",
+    "full_description2": "With engaging lessons and practical exercises, this course offers an effective way to master the essentials. Explore structured modules that ensure a seamless learning experience and introduce more topics as you progress. Whether you're new to the language or looking to build a stronger foundation, this course has something for everyone.",    "hours": "20 hours",
+    "instructor": "Oriemi Obang",
+    "availability": "Free",
+    "level": "Begginer",
+    "unit": [
+        {
+            "title": "Course introduction",
+            "topic": [
+                {
+                    "title": "introduction",
+                    "subtopic":[
+                        {   "title":"intro",
+                            "note": "",
+                            "videoLink": ""
+                        }
+                    ]
+                }
+
+            ]
+        },
+        {
+            "title": "Module 1: Alphabets and Numbers",
+            "topic": [
+                    {
+                        "id": "1.1",
+                        "title": "Mastering dha anywaa alphabets and numbers",
+                        "subtopic":[
+                          
+                        {    "id": "1.1.1",
+                            "title":"Module introduction",
+                            "note": "",
+                            "videoLink": ""
+                        },
+                        {    "id": "1.1.1",
+                            "title":"Dha anywaa alphabets",
+                            "note": "",
+                            "videoLink": ""
+                        },
+                        {   
+                            "id": "1.1.2",
+                            "title":"Numbers in dha anywaa",
+                            "note": "",
+                            "videoLink": ""
+                        },
+                    {   
+                        "id": "1.1.3",
+                        "title":"Excercise",
+                        "note": "",
+                        "videoLink": ""
+                }
+                    ]
+                }
+               
+
+            ]
+        },
+        {
+            "title": "Module 2: Reading", 
+            "topic": [
+                {
+                    "id": "2.1",
+                    "title": "Words",
+                    "subtopic": [
+                        {
+                            "id":"2.1",
+                            "title": "Alphabets and words",
+                            "note": "",
+                            "videoLink": ""
+
+                        },
+                        {
+                            "id":"2.1",
+                            "title": "Days of the week",
+                            "note": "",
+                            "videoLink": ""
+
+                        },
+                        {
+                            "id":"2.1",
+                            "title": "Months",
+                            "note": "",
+                            "videoLink": ""
+
+                        },
+                        {
+                            "id":"2.1",
+                            "title": "Months",
+                            "note": "",
+                            "videoLink": ""
+
+                        },
+                        {
+                            "id":"2.1",
+                            "title": "Seasons",
+                            "note": "",
+                            "videoLink": ""
+
+                        },
+                        {
+                            "id":"2.1",
+                            "title": "Singular and Plural",
+                            "note": "",
+                            "videoLink": ""
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "2.2",
+                    "title": "Sentences",
+                    "subtopic": [
+                        {
+                            "id":"2.2",
+                            "title": "Meeting and Greeting",
+                            "note": "",
+                            "videoLink": ""
+
+                        },
+                        {
+                            "id":"2.2",
+                            "title": "Self Introduction",
+                            "note": "",
+                            "videoLink": ""
+
+                        }
+                        ,
+                        {
+                            "id":"2.2",
+                            "title": "Stories",
+                            "note": "",
+                            "videoLink": ""
+
+                        }
+                    ]
+                }
+               
+               
+            ]
+        },
+        {
+            "title": "Module 3: Reading and Writing", 
+            "topic": [
+                {
+                    "id": "3.1",
+                    "title": "Module introduction",
+                    "subtopic": [
+                        {
+                            "id":"3.1.1",
+                            "title": "intro",
+                            "note": "",
+                            "videoLink": ""
+
+                        }
+                    ]
+                },
+                {
+                    "id": "2.2",
+                    "title": "Self Introduction",
+                    "subtopic": [
+                        {
+                            "id":"2.2",
+                            "title": "Write about yourself",
+                            "note": "",
+                            "videoLink": ""
+
+                        },
+                        {
+                            "id":"2.2",
+                            "title": "Write a story",
+                            "note": "",
+                            "videoLink": ""
+
+                        }
+
+                    ]
+                }
+               
+                
+            ]
+        }
+    ]
+}

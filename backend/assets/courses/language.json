@@ -4,7 +4,7 @@
     "description": "Explore our language section offering courses in Dha Anywaa, Amharic, and English, designed to enhance reading, writing, and communication skills for all levels.",
     "courses":[
         {
-            "id": 1,
+            "id": "eng",
             "title": "Learning English",
             "decription": "English focuses on fundamental reading and writing skills, helping students build a strong foundation in language basics. The course emphasizes vocabulary development, sentence structure...",
             "instructor": "Oriemi Obang",
@@ -15,7 +15,7 @@
           
           },
             {
-            "id": 2,
+            "id": "any",
             "title": "Dha Anywaa",
             "decription": "Dha Anywaa focuses on basic reading and writing skills, introducing foundational vocabulary and simple sentence structures. Students engage with practical exercises to build confidence in...",
             "instructor": "Oriemi Obang",
@@ -25,7 +25,7 @@
           
           },
             {
-            "id": 1,
+            "id": "amh",
             "title": "Amharic",
             "decription": "Amharic focuses on basic reading and writing skills, introducing foundational vocabulary and simple sentence structures. Students engage with practical exercises to build confidence in...",
             "instructor": "Oriemi Obang",

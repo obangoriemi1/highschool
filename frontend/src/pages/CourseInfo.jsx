@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom"
 import { IoIosArrowForward } from "react-icons/io";
 import atsa from '../assets/images/atsa-logo.png';
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { MdOutlineSubject } from "react-icons/md";
@@ -164,10 +164,48 @@ const CourseInfo = ()=> {
 
   const [selectedLanguage, setSelectedLanguage] = useState('Dha Anywaa')
   const [isExpanded, setIsExpanded] = useState(false);
-  // const [subTopicsVisible, setSubTopicsVisible] = useState(false);
-
-  // const toggleExpand = () => setIsExpanded((prev) => !prev);
-  // const toggleSubTopics = () => setSubTopicsVisible((prev) => !prev);
+  const [expandedCourse, setExpandedCourse] = useState(null);
+  const [subTopicsVisible, setSubTopicsVisible] = useState(null);
+  const [courseData, setCourseData] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+    
+      const fetchData = (course)=> {
+        const path =`/api/course/subject/${course}`
+        //http://localhost:3000/api/course/language
+        console.log(path)
+        fetch(path)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error fetching subject data');
+            }
+            return response.json();
+        })
+        .then(data => {
+            setCourseData(data)
+            console.log(data)
+            setLoading(false);
+        })
+        .catch(err => {
+            setError(err.message);
+            setLoading(false);
+        });
+      }
+    
+      useEffect(()=> {
+        fetchData(localStorage.getItem('course'))
+      }, [])
+    
+      if (loading) {
+        return (<div>Loading...</div>);
+      }
+      
+      if (error) {
+        return (<div>Error: {`error here ${error}`}</div>);
+      }
+    
+    
+  
 
   const handleLanguage = (e) => {
     console.log(e.target.value)
@@ -175,8 +213,7 @@ const CourseInfo = ()=> {
   }
 
 
-   const [expandedCourse, setExpandedCourse] = useState(null);
-   const [subTopicsVisible, setSubTopicsVisible] = useState(null);
+
    
    const toggleExpand = (index) => {
      // Toggle the expanded state for the selected course
@@ -212,8 +249,8 @@ const CourseInfo = ()=> {
             <div className=" h-12 flex justify-center items-center w-28 border border-l-8 bottom-2 dark:border-[#2a9df4] border-teal-800 rounded-md">Course</div>
           </div>
 
-          <h1 className="text-2xl md:text-4xl py-3">Mathematics for grade 9</h1>
-          <p className="pb-2">Explore essential Grade 9 mathematics concepts with clear explanations and practical applications to build a strong foundation for future learning</p>
+          <h1 className="text-2xl md:text-4xl py-3">{courseData.title}</h1>
+          <p className="pb-2">{courseData.short_description}</p>
           <select value={selectedLanguage} onChange={handleLanguage}  className="w-64 p-1 dark:bg-transparent  border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-800 dark:focus:ring-blue-500">
             <option  value="Dha anywaa" className="dark:bg-slate-900 dark:text-white bg-white text-black">Dha anywaa</option>
             <option value="English" className="dark:bg-slate-900 dark:text-white bg-white text-black">English</option>
@@ -229,22 +266,15 @@ const CourseInfo = ()=> {
           </div>
 
           <div className="flex flex-col gap-4 py-3 space-x-1 text-[18px] dark:text-gray-200 text-gray-700">
-            <p>Grade 9 mathematics serves as a pivotal stage in building a solid foundation for advanced mathematical concepts.
-              Students are introduced to a mix of algebra, geometry, and statistics to develop critical thinking skills.
-              This course emphasizes practical applications, encouraging learners to connect math with real-life problems.
-              With engaging lessons, students enhance their ability to analyze patterns, relationships, and logical reasoning</p>
+            <p>{courseData.full_description1}</p>
 
-          <p>Key topics include linear equations, quadratic functions, coordinate geometry, and introductory trigonometry.
-            Students will explore probability and statistics, learning to interpret and represent data effectively.
-            The curriculum challenges learners to solve problems systematically, fostering resilience and creativity.
-            Interactive teaching methods and consistent practice help build confidence and mastery in mathematics.
-            By the end of the course, students are well-prepared for higher-level math and its applications in various fields.</p>
+          <p>{courseData.full_description2}</p>
           </div>
 
           <h1 className="text-2xl md:text-4xl pb-5">Here’s what you will learn.</h1>
 
     <div className=" flex flex-col gap-3">
-    {courseList.map((course, index) => {
+    {courseData.unit.map((course, index) => {
         return (
           <motion.div
             key={course.title}
@@ -283,7 +313,7 @@ const CourseInfo = ()=> {
                   return (
                     <div key={idx}>
                       <p className="flex gap-1 items-center" onClick={() => toggleSubTopics(idx)}> <span className="rounded-full  border-[1px] border-teal-800 items-center justify-center p-[2px]">{subTopicsVisible === idx? <IoIosArrowUp/>: <IoIosArrowDown/> }</span> {subtitle.title}</p>
-                      {subtitle.subTopic && subtitle.subTopic.length > 0 && (
+                      {subtitle.subtopic && subtitle.subtopic.length > 0 && (
                         <ul
                           className="mt-2 pl-4 list-disc text-gray-600"
                         >
@@ -294,7 +324,7 @@ const CourseInfo = ()=> {
                               exit={{ opacity: 0, height: 0 }}
                               className="mt-2 pl-4 list-disc dark:text-gray-200 text-gray-600"
                             >
-                              {subtitle.subTopic.map((sub, subIdx) => (
+                              {subtitle.subtopic.map((sub, subIdx) => (
                                 <li key={subIdx}>{sub.title}</li>
                               ))}
                             </motion.ul>
@@ -327,16 +357,16 @@ const CourseInfo = ()=> {
            <div className="flex gap-4 justify-between px-1 mt-5">
             <div className="flex flex-col gap-2 items-center">
             <IoIosUnlock size={45}/> 
-            <p>Free</p>
+            <p>{courseData.availability}</p>
             </div>
             <div className="flex flex-col gap-2 items-center">
             <FaRegClock size={43}/> 
-            <p>20 hours</p>
+            <p>{courseData.hours}</p>
             </div>
       
             <div  className="flex flex-col gap-2 items-center">
             <HiMiniChartBar size={43} /> 
-            <p>Begginer</p>
+            <p>{courseData.level}</p>
             </div>
             <div  className="flex flex-col gap-2 items-center">
             <ImLab size={40}/> 
@@ -346,7 +376,7 @@ const CourseInfo = ()=> {
 
           </div>
 
-          <p className="pl-2 font-semibold my-1"><span className="text-gray-400 font-semibold text-xl">Instructor:</span> Oriemi Obang</p>
+          <p className="pl-2 font-semibold my-1"><span className="text-gray-400 font-semibold text-xl">Instructor: </span> {courseData.instructor}</p>
          </div>
         </div>
         

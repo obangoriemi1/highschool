@@ -164,6 +164,10 @@ const [currentSubject, setCurrentSubject] = useState("Language")
 
   }
 
+  const handleNav = (course)=> {
+    localStorage.setItem("course", course)
+  }
+
   const containerVariants = {
     hidden: { opacity: 1 },
     visible: {
@@ -269,7 +273,7 @@ const [currentSubject, setCurrentSubject] = useState("Language")
           <motion.div variants={itemVariants} className="relative h-auto border-b dark:border-[#2a9df4] border-teal-800  cursor-pointer  md:w-[27%] lg:w-[32.9%]  shadow-xl rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out"
        
        >
-         <NavLink className="lg:w-[40%]" to={'/course-info'}>
+         <NavLink onClick={()=>handleNav(course.id)} className="lg:w-[40%]" to={'/course-info'}>
          <img src={imageList[index]} alt="Instructor Oriemi" className="w-full h-52 object-cover" />
 
          <div className="p-4">
