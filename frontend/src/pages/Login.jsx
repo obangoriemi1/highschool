@@ -15,14 +15,16 @@ const Login = () => {
 
   }
   return ( 
-   <div className='flex p-8  h-screen items-start justify-start'>
-    <div className='text-gray-800 dark:text-white flex flex-col gap-5 justify-center  items-center px-16' >
+   <div className='flex md:flex-row flex-col p-8  h-screen items-start justify-start'>
+    <div className='text-gray-800 dark:text-white flex flex-col-reverse  md:flex-col gap-5 justify-center  items-center md:px-16' >
+      <div>
       <p className='text-4xl dark:text-gray-200 text-gray-700'>Build your knowladge with ATSA</p>
     <p className='text-lg space-x-3'> 
       Take the first step toward achieving your goals!
       Unlock a world of learning with engaging courses designed to empower you.
       Access expert resources and personalized tools to boost your success.
     </p>
+      </div>
       <img className='h-52 w-52' src={atsa} alt='ATSA Academy Logo' />
       
     </div>

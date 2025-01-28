@@ -350,7 +350,7 @@ const CourseInfo = ()=> {
             </NavLink>
 
         </div>
-        <div className="w-full md:w-[30%] dark:bg-slate-800 h-screen bg-slate-200 ">
+        <div className="w-full md:w-[30%] dark:bg-slate-800 md:h-screen bg-slate-200 ">
           <img className="h-[50%]" src={math_9}/>
          <div className="sticky top-0">
            <div className="flex gap-4 justify-between px-1 mt-5">
