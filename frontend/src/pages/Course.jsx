@@ -13,7 +13,7 @@ import { MdZoomInMap } from "react-icons/md";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa6";
 import { FaAngleLeft } from "react-icons/fa6";
-
+import LoadingPage from "./loadingPage";
 const Course = ()=> {
 
 
@@ -61,7 +61,7 @@ const Course = ()=> {
     }, [])
   
     if (loading) {
-      return (<div>Loading...</div>);
+      return (<LoadingPage />);
     }
     
     if (error) {
@@ -408,7 +408,7 @@ const Course = ()=> {
               <h2 className="flex-1 mx-4 text-lg font-semibold"> { course.title}</h2>
               <motion.div
                 initial={{ rotate: 0 }}
-                animate={{ rotate: expandedCourse === index ? 180 : 0 }}
+                animate={{ rotate: expandedCourse === index ? 1 : 0 }}
                 transition={{ duration: 0.2 }}
                 className="text-teal-800 dark:text-[#2a9df4]"
               >
@@ -457,13 +457,13 @@ const Course = ()=> {
       })}
          </div>
          <div  ref={containerRef} className= {hideBar? 'md:w-full w-full h-screen border-[1px]  border-gray-300 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent': "md:w-[70%] w-full h-screen border-[1px]  border-gray-300 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent"}>
-         <div className={`fixed rounded-sm ${isFullScreen? `left-0`:hideBar? `left-15`: `left-[32.3%]`}  top-[50%] dark:text-[#2a9df4] text-teal-800  p-1 border-t-2 border-r-2 border-b-2 border-teal-800 dark:border-[#2a9df4]`}>
-         <FaAngleLeft size={30} />
-            </div>
-            <div className={isFullScreen?"fixed rounded-sm right-0 top-[50%] dark:text-[#2a9df4] text-teal-800  p-1 border-t-2 border-l-2 border-b-2 border-teal-800 dark:border-[#2a9df4]" :"fixed rounded-sm right-[6%] top-[50%] dark:text-[#2a9df4] text-teal-800  p-1 border-t-2 border-l-2 border-b-2 border-teal-800 dark:border-[#2a9df4]"}>
+         <div className={`fixed rounded-sm ${isFullScreen? `left-0`:hideBar? `left-15`: `md:left-[32.3%]`}  top-[50%] dark:text-[#2a9df4] text-teal-800  p-1 border-t-2 border-r-2 border-b-2 border-teal-800 dark:border-[#2a9df4]`}>
+            <FaAngleLeft size={30} />
+         </div>
+          <div className={isFullScreen?"fixed rounded-sm right-0 top-[50%] dark:text-[#2a9df4] text-teal-800  p-1 border-t-2 border-l-2 border-b-2 border-teal-800 dark:border-[#2a9df4]" :"fixed rounded-sm right-[6%] top-[50%] dark:text-[#2a9df4] text-teal-800  p-1 border-t-2 border-l-2 border-b-2 border-teal-800 dark:border-[#2a9df4]"}>
             <FaAngleRight size={30} />
-            </div>
-            <div className=" flex justify-between">
+          </div>
+            <div className=" flex  justify-between  items-center dark:bg-slate-900  bg-white  h-16 ">
 
             
 
@@ -472,21 +472,18 @@ const Course = ()=> {
                      <div><MdOutlineMenuOpen onClick={handleBar} size={30} /></div> 
                     <p className="text-xl">{courseData.title}</p>
                 </div>
-               {!isFullScreen &&  <div><AiOutlineExpandAlt onClick={handleFullScreen} size={30} /></div>}
+               {!isFullScreen &&  <div className=""><AiOutlineExpandAlt onClick={handleFullScreen} size={30} /></div>}
 
             </div>
 
-            <div className="w-full">
-            <iframe className="w-full h-96"   src="https://www.youtube.com/embed/_FSXJmESFmQ?si=oFkKxI3toIa61FtD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div className="w-full h-[30%] md:h-[60%]">
+            <iframe className="w-full h-[100%]"   src="https://www.youtube.com/embed/_FSXJmESFmQ?si=oFkKxI3toIa61FtD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             {isFullScreen && <div onClick={handleExitFullScreen} className="p-3 text-white fixed  rounded-full shadow-lg  right-28 bottom-20 dark:bg-[#2a9df4] bg-teal-800">
               <MdZoomInMap  size={40} />
               </div>}
-            <div>
-            <iframe src={math} allowFullScreen width="100%" height="600px"></iframe>
-
-           
-
+            <div className="w-full">
+               <iframe src={math} allowFullScreen width="100%" height="1000px"></iframe>
             </div>
 
 

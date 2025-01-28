@@ -27,7 +27,7 @@ import html from '../assets/course_images/html.jpg'
 import css from '../assets/course_images/css.jpg'
 import javasc from '../assets/course_images/javasc.jpg'
 import phy11 from '../assets/course_images/phy11.jpg'
-
+import LoadingPage from "./loadingPage";
 
 
 
@@ -148,7 +148,7 @@ const [currentSubject, setCurrentSubject] = useState("Language")
   }, [])
 
   if (loading) {
-    return (<div>Loading...</div>);
+    return (<LoadingPage />);
   }
   
   if (error) {

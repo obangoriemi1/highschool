@@ -11,6 +11,7 @@ import { IoIosUnlock } from "react-icons/io";
 import { FaRegClock } from "react-icons/fa6";
 import { HiMiniChartBar } from "react-icons/hi2";
 import { ImLab } from "react-icons/im";
+import LoadingPage from "./loadingPage";
 
 
 
@@ -172,7 +173,6 @@ const CourseInfo = ()=> {
     
       const fetchData = (course)=> {
         const path =`/api/course/subject/${course}`
-        //http://localhost:3000/api/course/language
         console.log(path)
         fetch(path)
         .then(response => {
@@ -197,9 +197,8 @@ const CourseInfo = ()=> {
       }, [])
     
       if (loading) {
-        return (<div>Loading...</div>);
+        return (<LoadingPage />);
       }
-      
       if (error) {
         return (<div>Error: {`error here ${error}`}</div>);
       }
@@ -235,7 +234,7 @@ const CourseInfo = ()=> {
         <h1 className="flex font-semibold gap-1 items-center dark:text-white text-black">Catalog <span className="flex items-center"><IoIosArrowForward size={18} /></span></h1>
         </NavLink> 
         </Link>
-        <h1 className="text-gray-800 dark:text-gray-300">Mathematics </h1>
+        <h1 className="text-gray-800 dark:text-gray-300">{courseData.title} </h1>
       </div>
 
       <div className=" flex flex-col-reverse gap-2 md:flex-row">
@@ -351,7 +350,7 @@ const CourseInfo = ()=> {
             </NavLink>
 
         </div>
-        <div className="w-full md:w-[30%] dark:bg-slate-800 h-screen bg-slate-200 ">
+        <div className="w-full md:w-[30%] dark:bg-slate-800 md:h-screen bg-slate-200 ">
           <img className="h-[50%]" src={math_9}/>
          <div className="sticky top-0">
            <div className="flex gap-4 justify-between px-1 mt-5">

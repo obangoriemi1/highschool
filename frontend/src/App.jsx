@@ -14,6 +14,7 @@ import CourseInfo from './pages/CourseInfo';
 import Footer from './components/Footer';
 import Login from './pages/Login';
 import Course from './pages/Course';
+import LoadingPage from './pages/loadingPage';
 
 const App = () => {
   return (
