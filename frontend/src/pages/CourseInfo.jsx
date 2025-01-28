@@ -11,6 +11,7 @@ import { IoIosUnlock } from "react-icons/io";
 import { FaRegClock } from "react-icons/fa6";
 import { HiMiniChartBar } from "react-icons/hi2";
 import { ImLab } from "react-icons/im";
+import LoadingPage from "./loadingPage";
 
 
 
@@ -172,7 +173,6 @@ const CourseInfo = ()=> {
     
       const fetchData = (course)=> {
         const path =`/api/course/subject/${course}`
-        //http://localhost:3000/api/course/language
         console.log(path)
         fetch(path)
         .then(response => {
@@ -197,9 +197,8 @@ const CourseInfo = ()=> {
       }, [])
     
       if (loading) {
-        return (<div>Loading...</div>);
+        return (<LoadingPage />);
       }
-      
       if (error) {
         return (<div>Error: {`error here ${error}`}</div>);
       }
