@@ -20,6 +20,7 @@ const Course = ()=> {
 
   const [hideBar, setHideBar] = useState(false)
   const [isFullScreen, setIsFullScreen] = useState(false)
+  const [isOutLine, setIsOutLine] = useState(true);
 
      
   const [isExpanded, setIsExpanded] = useState(false);
@@ -386,13 +387,13 @@ const Course = ()=> {
                 
   >
             <div className="flex font-semibold text-xl dark:text-gray-100 justify-between border-b bottom-[1px]  border-gray-200">
-                <div className="w-[50%] flex justify-center items-center border-r p-5 bottom-[2px] border-gray-100 dark:border-b-[#2a9df4] border-b-teal-800 border-b-2 text-nowrap" >Course Outline</div>
-                <div className="w-[50%] flex justify-center items-center p-5">Resourse</div>
+                <div onClick={()=> setIsOutLine(true)} className={`w-[50%] cursor-pointer flex justify-center items-center border-r p-5 bottom-[2px] ${isOutLine? 'border-gray-100 dark:border-b-[#2a9df4] border-b-teal-800 border-b-2': ''} text-nowrap`} >Course Outline</div>
+                <div onClick={()=> setIsOutLine(false)} className={`w-[50%] cursor-pointer flex justify-center ${!isOutLine? 'border-gray-100 dark:border-b-[#2a9df4] border-b-teal-800 border-b-2': ''} items-center p-5`}>Resourse</div>
             </div>
 
             {courseData.unit.map((course, index) => {
         return (
-          <motion.div
+        !isOutLine ? index ===0 && <div className="flex items-center justify-center h-full">No Rosources available</div>:  <motion.div
             key={course.title}
             className=" border-b-[1px] border-gray-300 p-4  w-full cursor-pointer"
             whileTap={{ scale: 0.98 }}
@@ -405,7 +406,7 @@ const Course = ()=> {
                 </div>
               </div>
               {/* IoIosArrowUp,IoIosArrowDown */}
-              <h2 className="flex-1 mx-4 text-lg font-semibold"> { course.title}</h2>
+              <h2 className="flex-1 mx-4 text-lg font-semibold"> {course.title}</h2>
               <motion.div
                 initial={{ rotate: 0 }}
                 animate={{ rotate: expandedCourse === index ? 1 : 0 }}
@@ -457,10 +458,10 @@ const Course = ()=> {
       })}
          </div>
          <div  ref={containerRef} className= {hideBar? 'md:w-full w-full h-screen border-[1px]  border-gray-300 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent': "md:w-[70%] w-full h-screen border-[1px]  border-gray-300 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent"}>
-         <div className={`fixed rounded-sm ${isFullScreen? `left-0`:hideBar? `left-15`: `md:left-[32.3%]`}  top-[50%] dark:text-[#2a9df4] text-teal-800  p-1 border-t-2 border-r-2 border-b-2 border-teal-800 dark:border-[#2a9df4]`}>
+         <div className={`fixed cursor-pointer rounded-sm ${isFullScreen? `left-0`:hideBar? `left-15`: `md:left-[32.3%]`}  top-[50%] dark:text-[#2a9df4] text-teal-800  p-1 border-t-2 border-r-2 border-b-2 border-teal-800 dark:border-[#2a9df4]`}>
             <FaAngleLeft size={30} />
          </div>
-          <div className={isFullScreen?"fixed rounded-sm right-0 top-[50%] dark:text-[#2a9df4] text-teal-800  p-1 border-t-2 border-l-2 border-b-2 border-teal-800 dark:border-[#2a9df4]" :"fixed rounded-sm right-[6%] top-[50%] dark:text-[#2a9df4] text-teal-800  p-1 border-t-2 border-l-2 border-b-2 border-teal-800 dark:border-[#2a9df4]"}>
+          <div className={isFullScreen?"fixed cursor-pointer rounded-sm right-0 top-[50%] dark:text-[#2a9df4] text-teal-800  p-1 border-t-2 border-l-2 border-b-2 border-teal-800 dark:border-[#2a9df4]" :"fixed rounded-sm right-[6%] top-[50%] dark:text-[#2a9df4] text-teal-800  p-1 border-t-2 border-l-2 border-b-2 border-teal-800 dark:border-[#2a9df4]"}>
             <FaAngleRight size={30} />
           </div>
             <div className=" flex  justify-between  items-center dark:bg-slate-900  bg-white  h-16 ">
